@@ -17,8 +17,18 @@ class CalculatorTest {
     void add_shouldSumTwoIntegers() {
         Calculator c = new Calculator();
         assertEquals(5, c.add(2, 3));
-        // TODO: weitere Grenzfälle (z. B. negative Zahlen)
+    	//Testfälle mit negativen Zahlen ergänzt
+    	assertEquals(5, c.add(-5, 10));
+    	assertEquals(-10, c.add(-5,-5));
     }
+
+	//Testfälle mit subtraktion ergänzt
+	@Test
+	void subtract_shouldSubtractTwoIntegers() {
+		Calculator c = new Calculator();
+		assertEquals(2, c.subtract(5,3));
+		assertEquals(-10, c.subtract(-20, -10));
+	}
 
     @Test
     void divide_byZero_shouldReturnZero_currentBehavior() {
