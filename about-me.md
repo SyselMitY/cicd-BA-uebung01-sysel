@@ -9,8 +9,7 @@ Ich hab viele Namen, aber mein bis jetzt (Stand 2025-10) liebster ist **Emma** (
  Ich habe bereits etwas Erfahrung mit dem Thema, allerdings ist diese nicht
  sonderlich ausführlich, und viele Grundlagen kenne ich nur durch good guesses.
 
-# Fakten über mich für Diversity damit die Datei nicht fad ist oder warum auch
-immer diese gefordert werden :P
+# Fakten über mich für Diversity damit die Datei nicht fad ist oder warum auch immer diese gefordert werden :P
 Ok also drei Fakten über mich. Ich habe eine andere Verbindung zu meinem Umfeld
 als viele andere Menschen, weshalb ich unter anderem nach einer Liegesession in
 einer Wiese beschlossen habe, eine Religion zu gründen, die mit meinem Weltbild
