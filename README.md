@@ -1,3 +1,11 @@
+# Übungen
+## Übung 1
+- Autor: Emma Sysel
+- Besonderheit: Bereits viel Git-Erfahrung durch HTL Informatik, bisherige
+  Projekte, und Tools wie [Learn Git
+  Branching](https://learngitbranching.js.org)
+
+
 # CI/CD Übung – Java Basisprojekt (Ü1 mit Anleitungen)
 
 Dieses Repository ist der Startpunkt für **Übung 1** und wird in **allen folgenden Übungen** weiterverwendet
