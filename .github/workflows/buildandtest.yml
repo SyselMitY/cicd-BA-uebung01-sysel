@@ -28,6 +28,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup just
+        uses: taiki-e/install-action@just
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -35,7 +38,7 @@ jobs:
           cache: maven
 
       - name: Build & Test (with coverage)
-        run: mvn -B -DskipTests=false test
+        run: just test
 
       - name: Upload test reports
         if: always()
