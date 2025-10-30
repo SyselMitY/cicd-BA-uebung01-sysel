@@ -1,0 +1,52 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: ["src/**","pom.xml",".github/workflows"]
+  pull_request:
+    branches: [ "main" ]
+    paths: ["src/**","pom.xml",".github/workflows"]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test:
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        java-version: [17,21]
+        exclude:
+          - os: windows-latest
+            java-version: 17
+            
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '${{ matrix.java-version }}
+          cache: maven
+
+      - name: Build & Test (with coverage)
+        run: mvn -B -DskipTests=false test
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: target/surefire-reports
+
+      - name: Upload JaCoCo HTML (optional)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-site
+          path: target/site/jacoco
