@@ -52,7 +52,7 @@
           </includes>
         </configuration>
       </plugin>
-      <!-- JaCoCo Coverage (für SonarCloud in Übung 2 hilfreich) -->
+      <!-- JaCoCo Coverage (für SonarCloud in Übung 2 hilfreich!) -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
