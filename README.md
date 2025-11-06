@@ -5,7 +5,8 @@
   Projekte, und Tools wie [Learn Git
   Branching](https://learngitbranching.js.org)
 
-
+## Übung 2
+[![Java CI with Maven](https://github.com/SyselMitY/cicd-BA-uebung01-sysel/actions/workflows/buildandtest.yml/badge.svg)](https://github.com/SyselMitY/cicd-BA-uebung01-sysel/actions/workflows/buildandtest.yml)
 # CI/CD Übung – Java Basisprojekt (Ü1 mit Anleitungen)
 
 Dieses Repository ist der Startpunkt für **Übung 1** und wird in **allen folgenden Übungen** weiterverwendet
