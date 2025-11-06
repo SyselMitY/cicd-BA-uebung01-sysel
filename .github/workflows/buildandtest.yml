@@ -55,7 +55,7 @@ jobs:
           path: target/site/jacoco
 
       - name: SonarCloud Scan
-        if: ${{ matrix.os == ubuntu-latest && matrix.java-version == 21}}
+        if: ${{ matrix.os == "ubuntu-latest" && matrix.java-version == 21}}
         uses: SonarSource/sonarcloud-github-action@v2
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
