@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Calculator {
 
-    public static int MAX_OPERANDS = 100;
+    public static final int MAX_OPERANDS = 100;
 
     // Einfacher Addierer
     public int add(int a, int b) {
@@ -26,17 +26,6 @@ public class Calculator {
             return 0; 
         }
         return a / b; // Integer Division
-    }
-
-    // Duplizierte Logik (sumUp vs. addAll) für Sonar "Duplicated code"
-    public int sumUp(List<Integer> nums) {
-        int s = 0;
-        for (Integer n : nums) {
-            if (n != null) {
-                s += n;
-            }
-        }
-        return s;
     }
 
     public int addAll(List<Integer> nums) {

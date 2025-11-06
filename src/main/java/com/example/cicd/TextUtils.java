@@ -2,10 +2,14 @@ package com.example.cicd;
 
 public class TextUtils {
 
+	private TextUtils(){
+		// no constructor should be public accessible	
+	}
+
     public static boolean isPalindrome(String input) {
         if (input == null) return false;
         String reversed = new StringBuilder(input).reverse().toString();
-        return input.toLowerCase().equals(reversed.toLowerCase()); // absichtlich falsch
+        return input.equalsIgnoreCase(reversed); // absichtlich falsch
     }
 
     // Leerer Catch-Block + sehr generische Exception
