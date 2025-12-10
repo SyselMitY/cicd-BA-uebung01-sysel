@@ -50,3 +50,27 @@ jobs:
           name: docker-image-${{ steps.vars.outputs.short_sha }}
           path: image-${{ steps.vars.outputs.short_sha }}.tar
           retention-days: 7
+
+  scan-for-vulns:
+    runs-on: ubuntu-latest
+    needs: docker-build-artifact
+    steps:
+      - name: Download image artifact
+        uses: actions/dowload-artifact@v4
+        with:
+          name: docker-image-${{ needs.docker-build-artifact.outputs.short_sha }}
+
+      - name: Load docker image
+        run: docker load -i image-${{ needs.docker-build-artifact.outputs.short_sha }}.tar
+      - name: Grype image scan
+        uses: anchore/scan-action@v6
+        with:
+          image: "local/cicdtest:${{ needs.docker-build-artifact.outputs.short_sha }}"
+          output-format: json
+
+      - name: Upload Grype report
+        uses: actions/upload-artifact@v4
+        with:
+          name: grype-report.json
+          path: ${{ steps.scan.outputs.json }}
+
