@@ -56,7 +56,7 @@ jobs:
     needs: docker-build-artifact
     steps:
       - name: Download image artifact
-        uses: actions/dowload-artifact@v4
+        uses: actions/download-artifact@v4
         with:
           name: docker-image-${{ needs.docker-build-artifact.outputs.short_sha }}
 
