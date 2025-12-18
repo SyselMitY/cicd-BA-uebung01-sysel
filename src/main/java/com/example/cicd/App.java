@@ -1,8 +1,11 @@
 package com.example.cicd;
 import java.util.Arrays;
 import java.util.List;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class App {
+	private static Logger LOGGER = LogManager.getLogger();
     public static void main(String[] args) {
         Calculator calc = new Calculator();
         int sum = calc.add(2, 3);
@@ -16,5 +19,6 @@ public class App {
         System.out.println("isPalindrome('Anna')? " + TextUtils.isPalindrome("Anna"));
         System.out.println("safeParseInt('42'): " + TextUtils.safeParseInt("42"));
         System.out.println("safeParseInt('x'): " + TextUtils.safeParseInt("x"));
+		LOGGER.info("helo");
     }
 }
