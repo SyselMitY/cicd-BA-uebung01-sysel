@@ -66,6 +66,7 @@ jobs:
         run: docker load -i image-${{ needs.docker-build-artifact.outputs.short_sha }}.tar
       - name: Grype image scan
         uses: anchore/scan-action@v6
+        id: scan
         with:
           image: "local/cicdtest:${{ needs.docker-build-artifact.outputs.short_sha }}"
           output-format: json
