@@ -7,7 +7,7 @@ COPY src ./src
 RUN mvn -B -DskipTests=false package && ls -lah target
 
 
-FROM eclipse-temurin:21-jre
+FROM eclipse-temurin:21-jre-alpine-3.22
 WORKDIR /app
 
 COPY --from=build /app/target/*.jar app.jar
